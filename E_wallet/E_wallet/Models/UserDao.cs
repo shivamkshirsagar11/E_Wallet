@@ -32,7 +32,7 @@ namespace E_wallet.Models
             return user;
         }
 
-        public IEnumerable<User> GetAll(int id)
+        public IEnumerable<User> GetAll(String id)
         {
             return context.Users;
         }

@@ -1,6 +1,7 @@
 using E_wallet.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -24,6 +25,7 @@ namespace E_wallet
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //services.AddScoped<IMiddleware>();
             services.AddControllersWithViews();
             services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DatabaseConnectionEW")));
         }
@@ -50,6 +52,9 @@ namespace E_wallet
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapGet("/", async context =>
+                await context.Response.WriteAsync("Home page of E wallet")
+                ) ;
             });
         }
     }
