@@ -65,11 +65,6 @@ F:\shivamUtil\E_Wallet\E_wallet\E_wallet\obj\Debug\netcoreapp3.1\E_wallet.TagHel
 F:\shivamUtil\E_Wallet\E_wallet\E_wallet\obj\Debug\netcoreapp3.1\E_wallet.RazorCoreGenerate.cache
 F:\shivamUtil\E_Wallet\E_wallet\E_wallet\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 F:\shivamUtil\E_Wallet\E_wallet\E_wallet\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
-F:\shivamUtil\E_Wallet\E_wallet\E_wallet\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
-F:\shivamUtil\E_Wallet\E_wallet\E_wallet\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
-F:\shivamUtil\E_Wallet\E_wallet\E_wallet\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ValidationScriptsPartial.cshtml.g.cs
-F:\shivamUtil\E_Wallet\E_wallet\E_wallet\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewImports.cshtml.g.cs
-F:\shivamUtil\E_Wallet\E_wallet\E_wallet\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_ViewStart.cshtml.g.cs
 F:\shivamUtil\E_Wallet\E_wallet\E_wallet\obj\Debug\netcoreapp3.1\Razor\Views\_ViewImports.cshtml.g.cs
 F:\shivamUtil\E_Wallet\E_wallet\E_wallet\obj\Debug\netcoreapp3.1\Razor\Views\_ViewStart.cshtml.g.cs
 F:\shivamUtil\E_Wallet\E_wallet\E_wallet\obj\Debug\netcoreapp3.1\E_wallet.RazorTargetAssemblyInfo.cache
@@ -79,4 +74,6 @@ F:\shivamUtil\E_Wallet\E_wallet\E_wallet\obj\Debug\netcoreapp3.1\E_wallet.csproj
 F:\shivamUtil\E_Wallet\E_wallet\E_wallet\obj\Debug\netcoreapp3.1\E_wallet.dll
 F:\shivamUtil\E_Wallet\E_wallet\E_wallet\obj\Debug\netcoreapp3.1\E_wallet.pdb
 F:\shivamUtil\E_Wallet\E_wallet\E_wallet\obj\Debug\netcoreapp3.1\E_wallet.genruntimeconfig.cache
-F:\shivamUtil\E_Wallet\E_wallet\E_wallet\obj\Debug\netcoreapp3.1\Razor\Views\User\Create.cshtml.g.cs
+F:\shivamUtil\E_Wallet\E_wallet\E_wallet\obj\Debug\netcoreapp3.1\Razor\Views\User\SignupForm.cshtml.g.cs
+F:\shivamUtil\E_Wallet\E_wallet\E_wallet\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Login.cshtml.g.cs
+F:\shivamUtil\E_Wallet\E_wallet\E_wallet\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Home.cshtml.g.cs

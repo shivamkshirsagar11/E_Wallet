@@ -1,5 +1,3 @@
-using System;
-
 namespace E_wallet.Models
 {
     public class ErrorViewModel

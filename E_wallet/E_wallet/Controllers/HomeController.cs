@@ -1,11 +1,7 @@
 ﻿using E_wallet.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace E_wallet.Controllers
 {
@@ -20,7 +16,8 @@ namespace E_wallet.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            ViewBag.title = "Login - E_Wallet";
+            return View("Login");
         }
 
         public IActionResult Privacy()
