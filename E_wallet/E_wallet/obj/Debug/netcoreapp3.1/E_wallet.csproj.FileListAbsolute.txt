@@ -79,3 +79,4 @@ F:\shivamUtil\E_Wallet\E_wallet\E_wallet\obj\Debug\netcoreapp3.1\E_wallet.csproj
 F:\shivamUtil\E_Wallet\E_wallet\E_wallet\obj\Debug\netcoreapp3.1\E_wallet.dll
 F:\shivamUtil\E_Wallet\E_wallet\E_wallet\obj\Debug\netcoreapp3.1\E_wallet.pdb
 F:\shivamUtil\E_Wallet\E_wallet\E_wallet\obj\Debug\netcoreapp3.1\E_wallet.genruntimeconfig.cache
+F:\shivamUtil\E_Wallet\E_wallet\E_wallet\obj\Debug\netcoreapp3.1\Razor\Views\User\Create.cshtml.g.cs

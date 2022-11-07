@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace E_wallet.Models
 {
-    public class UserDao : IMiddleWear<User>
+    public class UserDao : IMiddleWare<User>
     {
         private readonly AppDbContext context;
         public UserDao(AppDbContext context)

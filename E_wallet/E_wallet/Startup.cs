@@ -25,7 +25,7 @@ namespace E_wallet
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            //services.AddScoped<IMiddleware>();
+            services.AddScoped<IMiddleWare<User>,UserDao>();
             services.AddControllersWithViews();
             services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DatabaseConnectionEW")));
         }
@@ -49,9 +49,12 @@ namespace E_wallet
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
+                endpoints.MapControllerRoute(                          
+                    name: "default",                                   
                     pattern: "{controller=Home}/{action=Index}/{id?}");
+                endpoints.MapControllerRoute(
+                    name: "signup",
+                    pattern: "{controller=User}/signup/{action=Create}/");
                 endpoints.MapGet("/", async context =>
                 await context.Response.WriteAsync("Home page of E wallet")
                 ) ;

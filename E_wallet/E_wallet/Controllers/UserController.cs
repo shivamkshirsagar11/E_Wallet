@@ -9,8 +9,8 @@ namespace E_wallet.Controllers
 {
     public class UserController : Controller
     {
-        private readonly UserDao userDao;
-        public UserController(UserDao userD)
+        private readonly IMiddleWare<User> userDao;
+        public UserController(IMiddleWare<User> userD)
         {
             this.userDao = userD;
         }

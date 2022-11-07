@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace E_wallet.Models
 {
-    interface IMiddleWear<T>
+   public  interface IMiddleWare<T>
     {
         T GetOneWithId(int id);
         IEnumerable<T> GetAll(String id);
