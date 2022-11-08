@@ -6,7 +6,7 @@
 </head>
 <body>
     <h1>
-        Manage your Saved Debit/Credit Card
+        @ViewBag.head
     </h1>
     <hr />
     <div>
@@ -14,6 +14,9 @@
             if (Model.Count<Card>() > 0)
                 foreach (var card in Model)
                 {
+                <form action=@ViewBag.action method="post">
+                    <input type="hidden" value="@card.Id" name="cardId"/>
+                    <input type="hidden" value="@card.BankName" name="bankName"/>
                     <div class="card">
                         <div class="card__front card__part">
                             <img class="card__front-square card__square" src="~/img/bankico.png">
@@ -43,6 +46,8 @@
                         </div>
 
                     </div>
+                    <input type="submit" value=@ViewBag.buttonVal />
+                </form>
                     <br />
                 }
             else

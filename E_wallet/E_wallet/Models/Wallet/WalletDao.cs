@@ -8,7 +8,7 @@ namespace E_wallet.Models
     public class WalletDao : IMiddleWare<Wallet>
     {
         private readonly AppDbContext context;
-
+        static public Wallet currWallet { get; set; }
         public WalletDao(AppDbContext context)
         {
             this.context = context;
@@ -32,6 +32,7 @@ namespace E_wallet.Models
                 walle.UserI = id;
                 AddOne(walle);
             }
+            currWallet = walle;
             return walle;
         }
 
@@ -39,6 +40,7 @@ namespace E_wallet.Models
         {
             context.Wallet.Update(changed);
             context.SaveChanges();
+            currWallet = changed;
             return changed;
         }
 

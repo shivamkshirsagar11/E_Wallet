@@ -9,6 +9,7 @@ namespace E_wallet.Models
     {
         private readonly AppDbContext context;
         static public User CurrUser { get; set; }
+        static public User ToSenduser { get; set; }
         public UserDao(AppDbContext context)
         {
             this.context = context;
@@ -41,8 +42,8 @@ namespace E_wallet.Models
         public IEnumerable<User> GetAllWithSpecialFeild(string specialId)
         {
             var q = from m in context.Users select m;
-            q = q.Where(s => s.Mobile.Contains(specialId));
-            IEnumerable<User> users = (IEnumerable<User>)q.ToListAsync();
+            q = q.Where(s => s.Mobile.Contains(specialId) || s.Name.Contains(specialId)).Where(s=> s.Id != UserDao.CurrUser.Id);
+            IEnumerable<User> users = q.ToList();
             return users;
         }
 

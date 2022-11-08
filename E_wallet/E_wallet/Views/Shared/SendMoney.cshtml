@@ -1,0 +1,54 @@
+﻿@model E_wallet.Models.Wallet
+
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title></title>
+    </head>
+    <body>
+        @{ if (@ViewBag.error != true)
+            {
+                <h1>
+                    Send Money
+                </h1>
+                <h3>
+                    Current Wallet Balance: @Model.Balance
+                </h3>
+
+
+                <hr />
+                <form method="post" action="/user/search/mob">
+                    Search With Mobile No or Name: <input type="text" name="mobile" maxlength="10" />
+                    <input type="submit" value="Search" />
+                </form>
+                <hr />
+                var users = (IEnumerable<E_wallet.Models.User>)@ViewBag.users;
+
+                if(users != null)
+        foreach(var user in users)
+        {
+        <form method="post" action="/user/wallet/send/money/to/mobile">
+            <div style="width:30%;">
+                <span>
+                    @user.Name
+                </span>
+                <br />
+                <small>
+                    @user.Mobile
+                </small>
+                <input type="hidden" value="@user.Id" name="uid"/>
+                <input type="submit" value="Send" />
+                <hr />
+            </div>
+        </form>
+        }
+        }
+        else
+        {
+        <h3 style="color:red">@ViewBag.errorMsg</h3>
+        <a href="/user/link/wallet">Link Wallet</a>
+        }
+        }
+
+
+    </body>
+    </html>

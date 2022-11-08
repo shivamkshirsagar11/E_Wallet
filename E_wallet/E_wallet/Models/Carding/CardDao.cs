@@ -9,7 +9,6 @@ namespace E_wallet.Models
     public class CardDao : IMiddleWare<Card>
     {
         private readonly AppDbContext context;
-        
         public CardDao(AppDbContext context)
         {
             this.context = context;

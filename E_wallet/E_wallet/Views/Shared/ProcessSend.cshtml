@@ -1,0 +1,24 @@
+﻿@model E_wallet.Models.User
+
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title></title>
+    </head>
+    <body>
+    <h3>
+        Intermidiate Window 
+    </h3>
+        <h2>
+            Send Money to @Model.Name
+        </h2>
+        <small>
+            <b>Current Balance: @ViewBag.maxAmount</b>
+        </small>
+        <hr />
+        <form method="post" action="/intermidiate/send/to/user">
+            Send Amount: <input type="number" max="@ViewBag.maxAmount" min="1" name="sendMoney" />
+            <br />To (Mobile): @Model.Mobile
+            <br /><input type="submit" value="Send" />
+        </form>
+    </body>
+    </html>

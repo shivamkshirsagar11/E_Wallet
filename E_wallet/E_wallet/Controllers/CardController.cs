@@ -9,15 +9,20 @@ namespace E_wallet.Controllers
     public class CardController : Controller
     {
         private readonly IMiddleWare<Card> cardDao;
-        public CardController(IMiddleWare<Card> bank)
+        private readonly IMiddleWare<Wallet> walletDao;
+        public CardController(IMiddleWare<Card> bank,IMiddleWare<Wallet> wallet)
         {
             this.cardDao = bank;
+            this.walletDao = wallet;
         }
         [HttpGet][Route("/user/manage/cc/saved")]
         public IActionResult Index()
         {
             string uid = Convert.ToString(UserDao.CurrUser.Id);
             List<Card> AddedBanks = (List<Card>)cardDao.GetAllWithSpecialFeild(uid);
+            ViewBag.action = "/user/cc/delete";
+            ViewBag.buttonVal = "Delete";
+            ViewBag.head = "Manage your Saved Card";
             return View("CardManager",AddedBanks);
         }
         [Route("/user/add/cc/new")][HttpGet]
@@ -38,6 +43,38 @@ namespace E_wallet.Controllers
             addcard.UserI = UserDao.CurrUser.Id;
             cardDao.AddOne(addcard);
             return View("Home",UserDao.CurrUser);
+        }
+        [HttpPost][Route("/user/cc/delete")]
+        public IActionResult DeleteCard(int cardId)
+        {
+            if (WalletDao.currWallet == null)
+            {
+                walletDao.GetOneWithId(UserDao.CurrUser.Id);
+            }
+            cardDao.DeleteWithId(cardId);
+            if(WalletDao.currWallet.BankI == cardId)
+            {
+                Wallet temp = WalletDao.currWallet;
+                temp.BankI = -1;
+                temp.TakeANote = "Linked Card Removed";
+                walletDao.Update(temp);
+            }
+            return View("Home", UserDao.CurrUser);
+        }
+
+        [HttpGet][Route("/user/link/wallet")]
+        public IActionResult ToLink()
+        {
+            string uid = Convert.ToString(UserDao.CurrUser.Id);
+            List<Card> AddedBanks = (List<Card>)cardDao.GetAllWithSpecialFeild(uid);
+            ViewBag.action = "/user/cc/link";
+            ViewBag.buttonVal = "Link Wallet with this Card";
+            ViewBag.head = "Link Card to Wallet";
+            if (WalletDao.currWallet == null)
+            {
+                walletDao.GetOneWithId(UserDao.CurrUser.Id);
+            }
+            return View("CardManager",AddedBanks);
         }
     }
 }
