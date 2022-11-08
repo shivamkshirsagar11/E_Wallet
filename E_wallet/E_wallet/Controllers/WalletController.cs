@@ -26,5 +26,11 @@ namespace E_wallet.Controllers
             return View("WalletHome", walle);
             //return View("WalletHome", new Wallet());
         }
+
+        [HttpGet][Route("/user/manage/bank/saved")]
+        public IActionResult ManageBankHome()
+        {
+            return View("ManageBankHome");
+        }
     }
 }

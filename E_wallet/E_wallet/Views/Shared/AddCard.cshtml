@@ -1,0 +1,34 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <h1>
+        Add Debit/Credit card
+    </h1>
+    <hr />
+    <form method="post" action="/user/add/cc/process">
+        <ul>
+            <li>
+                Card Number:<input type="text" required name="accNo" maxlength="16" min="16" />
+            </li>
+            <li>
+                Card Expiredate:<input type="date" name="exp" required/>
+            </li>
+            <li>
+                CVV: <input type="text" name="cvv" required />
+            </li>
+            <li>
+                Bank Name: <input type="text" name="bankName" required />
+            </li>
+            <li>
+                IFSC Code: <input type="text" name="ifsc" required />
+            </li>
+            <li>
+                Card Holder Name: <input type="text" name="holder" required />
+            </li>
+        </ul>
+        <input type="submit" value="Add card"/>
+    </form>
+</body>
+</html>

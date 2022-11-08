@@ -1,0 +1,56 @@
+﻿@model IEnumerable<E_wallet.Models.Card>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <link rel="stylesheet" href="~/css/card.css" />
+</head>
+<body>
+    <h1>
+        Manage your Saved Debit/Credit Card
+    </h1>
+    <hr />
+    <div>
+        @{
+            if (Model.Count<Card>() > 0)
+                foreach (var card in Model)
+                {
+                    <div class="card">
+                        <div class="card__front card__part">
+                            <img class="card__front-square card__square" src="~/img/bankico.png">
+                            <img class="card__front-logo card__logo" src="https://www.fireeye.com/partners/strategic-technology-partners/visa-fireeye-cyber-watch-program/_jcr_content/content-par/grid_20_80_full/grid-20-left/image.img.png/1505254557388.png">
+                            <p class="card_numer">**** **** **** @card.CardNo.Substring(card.CardNo.Length - 4)</p>
+                            <div class="card__space-75">
+                                <span class="card__label">Holder</span>
+                                <p class="card__info">@card.Holdername</p>
+                            </div>
+
+                            <div class="card__space-25">
+                                <span class="card__label">Expires</span>
+                                <p class="card__info">@card.Expire</p>
+                            </div>
+                        </div>
+
+                        <div class="card__back card__part">
+                            <div class="card__black-line"></div>
+                            <div class="card__back-content">
+                                <div class="card__secret">
+                                    <p class="card__secret--last">@card.Cvv</p>
+                                </div>
+                                <img class="card__back-square card__square" src="~/img/bankico.png">
+                                <img class="card__back-logo card__logo" src="https://www.fireeye.com/partners/strategic-technology-partners/visa-fireeye-cyber-watch-program/_jcr_content/content-par/grid_20_80_full/grid-20-left/image.img.png/1505254557388.png">
+
+                            </div>
+                        </div>
+
+                    </div>
+                    <br />
+                }
+            else
+            {
+                <h3>No saved Credir/Debit card</h3>
+            }
+        }
+        <a href="/user/add/cc/new">Add Card</a>
+    </div>
+        </body>
+    </html>

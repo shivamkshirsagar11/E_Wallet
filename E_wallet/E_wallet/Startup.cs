@@ -23,6 +23,7 @@ namespace E_wallet
         {
             services.AddScoped<IMiddleWare<User>, UserDao>();
             services.AddScoped<IMiddleWare<Wallet>, WalletDao>();
+            services.AddScoped<IMiddleWare<Card>, CardDao>();
             services.AddControllersWithViews();
             services.AddDbContextPool<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DatabaseConnectionEW")));
         }

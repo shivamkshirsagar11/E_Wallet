@@ -78,3 +78,5 @@ F:\shivamUtil\E_Wallet\E_wallet\E_wallet\obj\Debug\netcoreapp3.1\Razor\Views\Use
 F:\shivamUtil\E_Wallet\E_wallet\E_wallet\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Login.cshtml.g.cs
 F:\shivamUtil\E_Wallet\E_wallet\E_wallet\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Home.cshtml.g.cs
 F:\shivamUtil\E_Wallet\E_wallet\E_wallet\obj\Debug\netcoreapp3.1\Razor\Views\Shared\WalletHome.cshtml.g.cs
+F:\shivamUtil\E_Wallet\E_wallet\E_wallet\obj\Debug\netcoreapp3.1\Razor\Views\Shared\CardManager.cshtml.g.cs
+F:\shivamUtil\E_Wallet\E_wallet\E_wallet\obj\Debug\netcoreapp3.1\Razor\Views\Shared\AddCard.cshtml.g.cs
