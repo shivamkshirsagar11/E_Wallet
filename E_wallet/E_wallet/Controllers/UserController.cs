@@ -7,11 +7,9 @@ namespace E_wallet.Controllers
     public class UserController : Controller
     {
         private readonly IMiddleWare<User> userDao;
-        private string CommonError;
         public UserController(IMiddleWare<User> userD)
         {
             this.userDao = userD;
-            this.CommonError = string.Empty;
         }
 
         public IActionResult Index()

@@ -8,10 +8,11 @@ namespace E_wallet.Models
     public class UserDao : IMiddleWare<User>
     {
         private readonly AppDbContext context;
-
+        static public User CurrUser { get; set; }
         public UserDao(AppDbContext context)
         {
             this.context = context;
+            
         }
 
         public User AddOne(User addthis)
@@ -47,9 +48,9 @@ namespace E_wallet.Models
 
         public User LoginWithEmailPassword(string email, string password)
         {
-            var q = from m in context.Users select m;
-            q = q.Where(s => s.Email.Contains(email) && s.Password.Contains(password));
+            var q = (from m in context.Users select m).Where(s => s.Email.Equals(email) && s.Password.Equals(password));
             User user = (User)q.FirstOrDefault();
+            CurrUser = user;
             return user;
         }
 

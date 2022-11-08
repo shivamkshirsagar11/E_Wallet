@@ -77,3 +77,4 @@ F:\shivamUtil\E_Wallet\E_wallet\E_wallet\obj\Debug\netcoreapp3.1\E_wallet.genrun
 F:\shivamUtil\E_Wallet\E_wallet\E_wallet\obj\Debug\netcoreapp3.1\Razor\Views\User\SignupForm.cshtml.g.cs
 F:\shivamUtil\E_Wallet\E_wallet\E_wallet\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Login.cshtml.g.cs
 F:\shivamUtil\E_Wallet\E_wallet\E_wallet\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Home.cshtml.g.cs
+F:\shivamUtil\E_Wallet\E_wallet\E_wallet\obj\Debug\netcoreapp3.1\Razor\Views\Shared\WalletHome.cshtml.g.cs

@@ -1,0 +1,27 @@
+﻿@model E_wallet.Models.Wallet
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>@ViewBag.title</title>
+    </head>
+    <body>
+        <h1>
+            Wallet Dashboard
+        </h1>
+        <hr />
+        <ul>
+            <li>
+                <b>Wallet Balance @Model.Balance ₹</b>
+            </li>
+            <li>
+                <b>
+                    Last Operated: @Model.LastOperated
+                </b>
+            </li>
+            <li>
+                <b>
+                    Last Operation: @Model.TakeANote
+                </b>
+            </li>
+        </ul>
+    </body>
+    </html>
