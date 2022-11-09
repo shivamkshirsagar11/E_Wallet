@@ -2,6 +2,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>DashBoard</title>
+    <script>
+    if ( window.history.replaceState ) {
+        window.history.replaceState(null, null, "/user/home" );
+    }
+    </script>
 </head>
 <body>
     <h1>
@@ -16,13 +21,13 @@
             <a href="/user/wallet/show">My Wallet</a>
         </li>
         <li>
-            <a href="#">Add Money to Wallet</a>
+            <a href="/user/add/money/wallet">Add Money to Wallet</a>
         </li>
         <li>
             <a href="/user/send/money">Send Money</a>
         </li>
         <li>
-            <a href="#">Passbook</a>
+            <a href="/user/wallet/history/passbook">Passbook</a>
         </li>
         <li>
             <a href="/user/manage/cc/saved">Manage Saved Credit/Debit cards</a>

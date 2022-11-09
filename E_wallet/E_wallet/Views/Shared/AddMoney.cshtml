@@ -1,0 +1,42 @@
+﻿@model E_wallet.Models.Wallet
+
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title></title>
+        <script type="text/javascript">
+        window.history.forward();
+        function noBack() {
+            window.history.forward();
+        }
+        </script>
+    </head>
+    <body>
+        @if (Model.BankI != -1)
+        {
+            <h1>
+                Add Money To Wallet
+            </h1>
+            <h3>
+                Current Balance: @Model.Balance
+            </h3>
+            <hr />
+            <form method="post" action="/user/add/amount/to/wallet">
+                Amount To Add in Wallet: <input type="number" name="money" max="100000" min="1" required />
+                <input type="submit" value="Add" />
+            </form>
+        }
+        else
+        {
+            <ul>
+                <li>
+                    <h3 style="color:red;">
+                        Please Link Your Wallet first!
+                    </h3>
+                </li>
+                <li>
+                    <a href="/user/link/wallet">Link Wallet</a>
+                </li>
+                    </ul>
+                }
+    </body>
+    </html> 

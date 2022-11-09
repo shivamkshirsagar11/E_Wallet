@@ -58,5 +58,11 @@ namespace E_wallet.Controllers
             ViewBag.msg = "Error on Login";
             return View("Login");
         }
+
+        [HttpGet][Route("/user/home")]
+        public IActionResult Home()
+        {
+            return View("Home",UserDao.CurrUser);
+        }
     }
 }

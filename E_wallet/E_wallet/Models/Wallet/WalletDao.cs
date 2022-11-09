@@ -40,7 +40,10 @@ namespace E_wallet.Models
         {
             context.Wallet.Update(changed);
             context.SaveChanges();
-            currWallet = changed;
+            if (changed.UserI == UserDao.CurrUser.Id)
+            {
+                currWallet = changed;
+            }
             return changed;
         }
 

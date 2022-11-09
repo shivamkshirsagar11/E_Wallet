@@ -11,5 +11,6 @@ namespace E_wallet.Models
         public DbSet<User> Users { get; set; }
         public DbSet<Wallet> Wallet { get; set; }
         public DbSet<Card> Card { get; set; }
+        public DbSet<Passbook> Passbook { get; set; }
     }
 }

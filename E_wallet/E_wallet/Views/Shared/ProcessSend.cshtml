@@ -3,20 +3,26 @@
     <html xmlns="http://www.w3.org/1999/xhtml">
     <head>
         <title></title>
+        <script type="text/javascript">
+        window.history.forward();
+        function noBack() {
+            window.history.forward();
+        }
+        </script>
     </head>
     <body>
     <h3>
         Intermidiate Window 
     </h3>
         <h2>
-            Send Money to @Model.Name
+            Send Money to @Model.Name <br />ID: @Model.Id
         </h2>
         <small>
             <b>Current Balance: @ViewBag.maxAmount</b>
         </small>
         <hr />
         <form method="post" action="/intermidiate/send/to/user">
-            Send Amount: <input type="number" max="@ViewBag.maxAmount" min="1" name="sendMoney" />
+            Send Amount: <input type="number" max="@ViewBag.maxAmount" min="1" name="sendMoney" required />
             <br />To (Mobile): @Model.Mobile
             <br /><input type="submit" value="Send" />
         </form>

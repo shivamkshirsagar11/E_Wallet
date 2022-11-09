@@ -10,11 +10,14 @@ namespace E_wallet.Controllers
     {
         private readonly IMiddleWare<Card> cardDao;
         private readonly IMiddleWare<Wallet> walletDao;
-        public CardController(IMiddleWare<Card> bank,IMiddleWare<Wallet> wallet)
+        private readonly IMiddleWare<Passbook> passbookDao;
+        public CardController(IMiddleWare<Card> bank,IMiddleWare<Wallet> wallet,IMiddleWare<Passbook> p)
         {
             this.cardDao = bank;
             this.walletDao = wallet;
+            this.passbookDao = p;
         }
+
         [HttpGet][Route("/user/manage/cc/saved")]
         public IActionResult Index()
         {
@@ -25,11 +28,13 @@ namespace E_wallet.Controllers
             ViewBag.head = "Manage your Saved Card";
             return View("CardManager",AddedBanks);
         }
+
         [Route("/user/add/cc/new")][HttpGet]
         public IActionResult AddNew()
         {
             return View("AddCard");
         }
+
         [HttpPost][Route("/user/add/cc/process")]
        public IActionResult ProcessCard(string accNo,string exp, string cvv, string bankName, string ifsc, string holder)
         {
@@ -47,18 +52,26 @@ namespace E_wallet.Controllers
         [HttpPost][Route("/user/cc/delete")]
         public IActionResult DeleteCard(int cardId)
         {
+            Card card = cardDao.GetOneWithId(cardId);
             if (WalletDao.currWallet == null)
             {
                 walletDao.GetOneWithId(UserDao.CurrUser.Id);
             }
-            cardDao.DeleteWithId(cardId);
+           
             if(WalletDao.currWallet.BankI == cardId)
             {
                 Wallet temp = WalletDao.currWallet;
                 temp.BankI = -1;
                 temp.TakeANote = "Linked Card Removed";
+                Passbook passbook = new Passbook();
+                passbook.UserI = UserDao.CurrUser.Id;
+                passbook.Action = "Important";
+                passbook.Date = DateTime.UtcNow.ToString();
+                passbook.Message = "Linked Card **** "+card.CardNo.Substring(card.CardNo.Length - 4)+", "+card.BankName+" Removed from Wallet";
+                passbookDao.AddOne(passbook);
                 walletDao.Update(temp);
             }
+            cardDao.DeleteWithId(cardId);
             return View("Home", UserDao.CurrUser);
         }
 
@@ -70,10 +83,6 @@ namespace E_wallet.Controllers
             ViewBag.action = "/user/cc/link";
             ViewBag.buttonVal = "Link Wallet with this Card";
             ViewBag.head = "Link Card to Wallet";
-            if (WalletDao.currWallet == null)
-            {
-                walletDao.GetOneWithId(UserDao.CurrUser.Id);
-            }
             return View("CardManager",AddedBanks);
         }
     }
