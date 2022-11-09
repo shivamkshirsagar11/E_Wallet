@@ -5727,11 +5727,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\shivamUtil\\E_Wallet\\E_wallet\\E_wallet\\E_wallet.csproj",
+      "projectUniqueName": "F:\\shivamUtil\\DotNetCoreMVCProject_CE058_CE057\\E_wallet\\E_wallet\\E_wallet.csproj",
       "projectName": "E_wallet",
-      "projectPath": "F:\\shivamUtil\\E_Wallet\\E_wallet\\E_wallet\\E_wallet.csproj",
+      "projectPath": "F:\\shivamUtil\\DotNetCoreMVCProject_CE058_CE057\\E_wallet\\E_wallet\\E_wallet.csproj",
       "packagesPath": "C:\\Users\\Shivam\\.nuget\\packages\\",
-      "outputPath": "F:\\shivamUtil\\E_Wallet\\E_wallet\\E_wallet\\obj\\",
+      "outputPath": "F:\\shivamUtil\\DotNetCoreMVCProject_CE058_CE057\\E_wallet\\E_wallet\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Shivam\\AppData\\Roaming\\NuGet\\NuGet.Config",

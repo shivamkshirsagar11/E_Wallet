@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "K61QFOR4ZEYXOl6ENGNlgEoNzkWapS6bSJcETvji3/qNtoWUJMlvZ95RKu8uD73++Y4HONOT6Ia+1aXGBuVUUw==",
+  "dgSpecHash": "g0UA6s2pv4ffSsV8IRhXTKrF5p0cOyoU46Sos7k/NtU7RpE+7i4GrbhT/wU1RwXBQCuIyIIlIt6vwmeMxBNcnQ==",
   "success": true,
-  "projectFilePath": "F:\\shivamUtil\\E_Wallet\\E_wallet\\E_wallet\\E_wallet.csproj",
+  "projectFilePath": "F:\\shivamUtil\\DotNetCoreMVCProject_CE058_CE057\\E_wallet\\E_wallet\\E_wallet.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Shivam\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\Shivam\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.1\\microsoft.bcl.hashcode.1.1.1.nupkg.sha512",
