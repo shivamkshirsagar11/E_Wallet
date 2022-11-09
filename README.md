@@ -13,5 +13,5 @@ Meet Katrodiya CE057
 </li>
 </ul>
 <span>
-All Contribution belongs to <a href="github.com/shivamkshirsagar11">Shivam Kshirsagar</a>
+All Contribution belongs to <a href="/github.com/shivamkshirsagar11">Shivam Kshirsagar</a>
 </span>
