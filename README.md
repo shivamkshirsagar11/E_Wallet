@@ -5,11 +5,11 @@ Project Partner:
 <ul>
 <li>
 Shivam Kshirsagar CE058
-<ul>
+
 <li>
 Meet Katrodiya CE057
 </li>
-</ul>
+
 </li>
 </ul>
 </li>
