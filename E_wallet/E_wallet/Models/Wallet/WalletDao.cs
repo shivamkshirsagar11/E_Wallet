@@ -67,5 +67,9 @@ namespace E_wallet.Models
             throw new NotImplementedException();
         }
 
+        public bool VerifyEmail(string email, string mobile)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

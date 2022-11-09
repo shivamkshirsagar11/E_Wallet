@@ -19,7 +19,10 @@ namespace E_wallet.Models
             context.SaveChanges();
             return addthis;
         }
-
+        public bool VerifyEmail(string email, string mobile)
+        {
+            throw new NotImplementedException();
+        }
         public Passbook DeleteWithId(int id)
         {
             throw new NotImplementedException();

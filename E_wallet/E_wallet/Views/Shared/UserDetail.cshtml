@@ -1,0 +1,47 @@
+﻿@model E_wallet.Models.User
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>User Details - E_Wallet</title>
+</head>
+<body>
+    <h1>
+        Your Account Details
+    </h1>
+    <hr />
+    <ul>
+        <li>
+            <b>
+                Name: @Model.Name
+            </b>
+        </li>
+        <li>
+            <b>
+                Email: @Model.Email
+            </b>
+        </li>
+        <li>
+            <b>
+                Mobile: @Model.Mobile
+            </b>
+        </li>
+        <li>
+            <b>
+                Gender: @Model.Gender
+            </b>
+        </li>
+        <li>
+            <b>
+                Address: @Model.Address
+            </b>
+        </li>
+        <li>
+            <b>
+                Zipcode: @Model.Zipcode
+            </b>
+        </li>
+        <li>
+            <a href="/user/signup/form/edit">Change user details</a>
+        </li>
+    </ul>
+</body>
+</html>

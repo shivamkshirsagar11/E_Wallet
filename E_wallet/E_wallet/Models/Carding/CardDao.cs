@@ -14,6 +14,11 @@ namespace E_wallet.Models
             this.context = context;
         }
         
+        public bool VerifyEmail(string email, string mobile)
+        {
+            throw new NotImplementedException();
+        }
+
         public Card AddOne(Card addthis)
         {
             context.Card.Add(addthis);

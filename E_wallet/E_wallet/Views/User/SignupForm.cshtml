@@ -3,8 +3,14 @@
     <link rel="stylesheet" href="~/css/reg.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
-<body>
-    <form method="post" action="/user/add/newly/create">
+<body>@{ 
+    var user = (E_wallet.Models.User)ViewBag.user;
+    if(user == null)
+    {
+        user = new User();
+    }
+}
+    <form method="post" action="@ViewBag.action">
         <section class="h-100 h-custom gradient-custom-2">
             <div class="container py-5 h-100">
                 <div class="row d-flex justify-content-center align-items-center h-100">
@@ -28,7 +34,7 @@
                                                 <div class="col-md-6 mb-4 pb-2">
 
                                                     <div class="form-outline">
-                                                        <input type="text" id="form3Examplev2" name="name" class="form-control form-control-lg" required/>
+                                                        <input type="text" id="form3Examplev2" name="name" class="form-control form-control-lg" required value="@user.Name" />
                                                         <label class="form-label" for="form3Examplev2">Full Name</label>
                                                     </div>
                                                 </div>
@@ -46,7 +52,7 @@
 
                                             <div class="mb-4 pb-2">
                                                 <div class="form-outline">
-                                                    <input type="email" name="email" id="form3Examplev4" class="form-control form-control-lg" required/>
+                                                    <input type="email" name="email" id="form3Examplev4" class="form-control form-control-lg" required @ViewBag.read value="@user.Email"/>
                                                     <label class="form-label" for="form3Examplev4" name="email">Email</label>
                                                 </div>
                                             </div>
@@ -67,7 +73,7 @@
 
                                             <div class="mb-4 pb-2">
                                                 <div class="form-outline form-white">
-                                                   <textarea class="form-control form-control-lg" name="address" cols="30" rows="3" required></textarea>
+                                                   <textarea class="form-control form-control-lg" name="address" cols="30" rows="3" required>@user.Address</textarea>
                                                     <label class="form-label" for="form3Examplea2">Address</label>
                                                 </div>
                                             </div>
@@ -76,14 +82,14 @@
                                                 <div class="col-md-5 mb-4 pb-2">
 
                                                     <div class="form-outline form-white">
-                                                        <input type="text" name="zip" id="form3Examplea4" class="form-control form-control-lg" required/>
+                                                        <input type="text" name="zip" id="form3Examplea4" class="form-control form-control-lg" required maxlength="6" max="999999" value="@user.Zipcode"/>
                                                         <label class="form-label" for="form3Examplea4">Zip Code</label>
                                                     </div>
                                                 </div>
                                                 <div class="col-md-7 mb-4 pb-2">
 
                                                     <div class="form-outline form-white">
-                                                        <input type="text" name="phno" maxlength="10" min="10" id="form3Examplea5" class="form-control form-control-lg" required/>
+                                                        <input type="text" name="phno" maxlength="10" min="10" id="form3Examplea5" class="form-control form-control-lg" required @ViewBag.read max="9999999999" value="@user.Mobile"/>
                                                         <label class="form-label" for="form3Examplea5">Ph. No (+91)</label>
                                                     </div>
                                                 </div>

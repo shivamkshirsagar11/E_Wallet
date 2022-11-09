@@ -18,5 +18,7 @@ namespace E_wallet.Models
         T AddOne(T addthis);
 
         T LoginWithEmailPassword(string email, string password);
+
+        bool VerifyEmail(string email, string mobile);
     }
 }

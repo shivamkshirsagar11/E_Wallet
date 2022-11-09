@@ -84,3 +84,4 @@ F:\shivamUtil\E_Wallet\E_wallet\E_wallet\obj\Debug\netcoreapp3.1\Razor\Views\Sha
 F:\shivamUtil\E_Wallet\E_wallet\E_wallet\obj\Debug\netcoreapp3.1\Razor\Views\Shared\ProcessSend.cshtml.g.cs
 F:\shivamUtil\E_Wallet\E_wallet\E_wallet\obj\Debug\netcoreapp3.1\Razor\Views\Shared\AddMoney.cshtml.g.cs
 F:\shivamUtil\E_Wallet\E_wallet\E_wallet\obj\Debug\netcoreapp3.1\Razor\Views\Shared\History.cshtml.g.cs
+F:\shivamUtil\E_Wallet\E_wallet\E_wallet\obj\Debug\netcoreapp3.1\Razor\Views\Shared\UserDetail.cshtml.g.cs

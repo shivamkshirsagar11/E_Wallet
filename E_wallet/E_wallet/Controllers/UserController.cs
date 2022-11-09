@@ -22,28 +22,68 @@ namespace E_wallet.Controllers
 
         [HttpGet][Route("/user/signup/form")]
         public IActionResult SignupForm(string er)
-        { 
+        {
+            ViewBag.action = "/user/add/newly/create";
+            ViewBag.read = "";
             return View();
         }
+        [HttpGet][Route("/user/signup/form/edit")]
+        public IActionResult SignupFormEdit(string er)
+        {
+            ViewBag.action = "/user/edit/old";
+            ViewBag.read = "readOnly";
+            ViewBag.user = UserDao.CurrUser;
+            return View("SignupForm");
+        }
+
+        [HttpPost]
+        [Route("/user/edit/old")]
+        public IActionResult CreateEdit(string useOfApp, string name, string gender, string email, string password, string address, string zip, string phno)
+        {
+            User newUser = new User
+            {
+                Id = UserDao.CurrUser.Id,
+                Use = useOfApp,
+                Name = name,
+                Gender = gender,
+                Email = email,
+                Password = password,
+                Address = address,
+                Zipcode = zip,
+                Mobile = phno
+            };
+            userDao.Update(newUser);
+            ViewBag.msg = "Details Edited";
+            return View("Login");
+        }
+
         [HttpPost][Route("/user/add/newly/create")]
         public IActionResult Create(string useOfApp, string name, string gender, string email, string password, string address, string zip, string phno)
         {
-            User newUser = new User();
-
-            newUser.Use = useOfApp;
-            newUser.Name = name;
-            newUser.Gender = gender;
-            newUser.Email = email;
-            newUser.Password = password;
-            newUser.Address = address;
-            newUser.Zipcode = zip;
-            newUser.Mobile = phno;
+            User newUser = new User
+            {
+                Use = useOfApp,
+                Name = name,
+                Gender = gender,
+                Email = email,
+                Password = password,
+                Address = address,
+                Zipcode = zip,
+                Mobile = phno
+            };
 
             if (newUser.ValidateEmptyOrBasicError())
             {
                 ViewBag.error = "Some Fields Are Empty!";
                 return View("SignupForm");
             }
+
+            if (!userDao.VerifyEmail(email, phno))
+            {
+                ViewBag.error = "Change Email or Mobile No, Already in Use";
+                return View("SignupForm");
+            }
+
             userDao.AddOne(newUser);
             ViewBag.msg = "User Registered";
             return View("Login");
@@ -63,6 +103,12 @@ namespace E_wallet.Controllers
         public IActionResult Home()
         {
             return View("Home",UserDao.CurrUser);
+        }
+
+        [HttpGet][Route("/user/details")]
+        public IActionResult Details()
+        {
+            return View("UserDetail", UserDao.CurrUser);
         }
     }
 }

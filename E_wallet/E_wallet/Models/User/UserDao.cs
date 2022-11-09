@@ -62,10 +62,15 @@ namespace E_wallet.Models
 
         public User Update(User changed)
         {
-            var user = context.Users.Attach(changed);
-            user.State = Microsoft.EntityFrameworkCore.EntityState.Modified;
+            context.Users.Update(changed);
             context.SaveChanges();
             return changed;
+        }
+        public bool VerifyEmail(string email,string mobile)
+        {
+            var q = (from m in context.Users select m).Where(s=>s.Email.Equals(email) || s.Mobile.Equals(mobile)).Count<User>();
+            if (q > 0) return false;
+            return true;
         }
     }
 }
